@@ -3,46 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <title>Kapoone Saludo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: sans-serif;
-      background-color: #111;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a1a1a, #2e003e);
       color: #fff;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
     }
+
     h1 {
-      font-size: 2em;
+      font-size: 2.5rem;
       color: #ff4081;
+      margin-bottom: 1rem;
     }
+
+    p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .btns {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     button {
-      padding: 10px 20px;
-      margin-top: 20px;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
       background-color: #ff4081;
-      color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
+      color: white;
       cursor: pointer;
-      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background-color: #ff1b70;
+    }
+
+    #saludoContainer {
+      margin-top: 2rem;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <div id="saludoContainer">
-    <!-- Aquí se mostrará el saludo -->
+  <h1>💬 Kapoone Saludo</h1>
+  <p>Haz clic en tu idioma preferido para recibir un saludo especial.</p>
+
+  <div class="btns">
+    <button onclick="mostrarSaludo('Kapoone', 'es')">Español 🇲🇽</button>
+    <button onclick="mostrarSaludo('Kapoone', 'en')">Inglés 🇺🇸</button>
   </div>
 
-  <button onclick="mostrarSaludo()">Saludar a Kapoone</button>
+  <div id="saludoContainer"></div>
 
   <script src="saludo.js"></script>
   <script>
-    function mostrarSaludo() {
-      document.getElementById("saludoContainer").innerHTML = SaludoKapoone.saludarHTML("Kapoone", "es");
+    function mostrarSaludo(nombre, idioma) {
+      const saludoHTML = SaludoKapoone.saludarHTML(nombre, idioma);
+      document.getElementById("saludoContainer").innerHTML = saludoHTML;
     }
   </script>
+
 </body>
 </html>
