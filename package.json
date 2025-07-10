@@ -1,0 +1,12 @@
+{
+  "name": "@marcokapoone/kapoone-saludo",
+  "version": "1.0.0",
+  "description": "Paquete para saludar con estilo desde NPM o HTML con emojis y multilenguaje",
+  "main": "index.js",
+  "keywords": ["saludo", "npm", "kapoone", "html", "emoji", "browser", "multilenguaje"],
+  "author": "Marco Kapoone",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
