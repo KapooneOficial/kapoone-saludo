@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Kapoone Saludo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 2em;
+      color: #ff4081;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="saludoContainer">
+    <!-- Aquí se mostrará el saludo -->
+  </div>
+
+  <button onclick="mostrarSaludo()">Saludar a Kapoone</button>
+
+  <script src="saludo.js"></script>
+  <script>
+    function mostrarSaludo() {
+      document.getElementById("saludoContainer").innerHTML = SaludoKapoone.saludarHTML("Kapoone", "es");
+    }
+  </script>
+</body>
+</html>
